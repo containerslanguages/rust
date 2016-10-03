@@ -1,0 +1,12 @@
+# To build it
+# docker build -t containerslanguages/rust-launcher -f Dockerfile.launcher .
+#
+# To run it
+# docker run -v /var/run/docker.sock:/var/run/docker.sock --rm containerslanguages/rust-launcher start
+FROM alpine
+
+ADD /launcher.sh /app/launcher.sh
+ADD /launcher_funcs.sh /app/launcher_funcs.sh
+
+ENTRYPOINT ["/app/launcher.sh"]
+CMD ["start"]
