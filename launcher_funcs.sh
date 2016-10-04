@@ -21,8 +21,8 @@ wait_until_container_is_running() {
 }
 
 check_mongod_is_fine() {
-  CONTAINER_ID=${1}  
-  if [ "$(docker exec ${CONTAINER_ID} pidof mongod" | wc -l)" -eq 0 ]; then
+  CONTAINER_ID=${1}
+  if [ "$(docker exec ${CONTAINER_ID} pidof mongod | wc -l)" -eq 0 ]; then
     return 1
   else
     return 0

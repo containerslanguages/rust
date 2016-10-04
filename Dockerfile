@@ -2,7 +2,7 @@
 # docker build -t containerslanguages/rust .
 #
 # To run it
-# docker run --rm -t containerslanguages/rust
+# docker run --rm -t --link mongodb containerslanguages/rust
 
 FROM scorpil/rust:1.11
 

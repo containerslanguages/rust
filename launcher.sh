@@ -23,7 +23,7 @@ check_mongod_is_fine ${cid}
 cid=$(docker run -d --link ${MONGODB_CONTAINER_NAME}:mongodb containerslanguages/rust)
 
 # Wait until it has started
-wait_until_container_has_started ${cid}
+wait_until_container_is_running ${cid}
 if ! container_is_running ${cid}; then
     echo "ERROR: Timeout waiting for the rust container to start."
     exit 1
